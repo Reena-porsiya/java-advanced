@@ -12,6 +12,7 @@ public class ArrayListExample {
         fruits.add("Apple");
         fruits.add("Banana");
         fruits.add("Orange");
+        fruits.add("Banana");
 
         // Display the ArrayList
         System.out.println("Initial ArrayList: " + fruits);
