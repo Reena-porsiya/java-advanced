@@ -1,4 +1,4 @@
-package advanced_java;
+package advancedjava;
 
 import java.util.*;
 import java.util.stream.*;
