@@ -1,7 +1,10 @@
 package javabasic;
+
 public class StaticInitializationBlockExample {
     // Static variable
     public static int x;
+ 
+    
 
     // Static initialization block
     static {
