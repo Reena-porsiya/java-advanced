@@ -1,38 +1,27 @@
 package javabasic;
-
-import java.lang.annotation.*;
-
-//Define a custom annotation
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-@interface MethodInfo {
- String author() default "Unknown";
- String date();
- int revision() default 1;
- String comments();
+//Base class with a method
+class BaseClass {
+ public void display() {
+     System.out.println("Display method in BaseClass");
+ }
 }
 
-//Class with a method annotated with the custom annotation
-public class AnnotationExample {
+//Derived class that overrides the method from BaseClass
+class DerivedClass extends BaseClass {
 
- @MethodInfo(author = "John", date = "2022-05-27", comments = "Sample method")
- public static void sampleMethod() {
-     System.out.println("Executing sampleMethod...");
+ // This annotation indicates that this method overrides a method in the superclass.
+ @Override
+ public void display() {
+     System.out.println("Display method in DerivedClass");
  }
+}
 
+public class AnnotationExample{
  public static void main(String[] args) {
-     // Get the annotation information at runtime
-     try {
-         // Retrieve the MethodInfo annotation of the sampleMethod
-         MethodInfo methodInfo = AnnotationExample.class.getDeclaredMethod("sampleMethod").getAnnotation(MethodInfo.class);
-
-         // Display the annotation information
-         System.out.println("Author: " + methodInfo.author());
-         System.out.println("Date: " + methodInfo.date());
-         System.out.println("Revision: " + methodInfo.revision());
-         System.out.println("Comments: " + methodInfo.comments());
-     } catch (NoSuchMethodException e) {
-         e.printStackTrace();
-     }
+     // Create an instance of DerivedClass
+     DerivedClass derived = new DerivedClass();
+     
+     // Call the overridden method
+     derived.display();
  }
 }
