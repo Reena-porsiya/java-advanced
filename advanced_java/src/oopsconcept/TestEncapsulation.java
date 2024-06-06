@@ -33,8 +33,6 @@ class Account {
 	  
 	}  
 
-
-
 public class TestEncapsulation {
 	public static void main(String[] args) {  
 	    //creating instance of Account class  
